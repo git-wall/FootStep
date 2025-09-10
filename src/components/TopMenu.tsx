@@ -16,14 +16,14 @@ interface TopMenuProps {
 export function TopMenu({
   showAllProgressBars,
   showAllIpAddresses,
-  isConnectMode,
+  // isConnectMode,
   onDeleteNode,
   onAddText,
   onCapture,
   onToggleAllProgressBars,
   onToggleAllIpAddresses,
   onToggleNodeList,
-  onToggleConnectMode,
+  // onToggleConnectMode,
   selectedNodeId
 }: TopMenuProps) {
   return (

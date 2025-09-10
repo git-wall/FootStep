@@ -133,13 +133,13 @@ function App() {
       const isDatabaseTech = ['mongodb', 'postgresql', 'mysql', 'redis', 'elasticsearch'].includes(technology.id);
 
       // Determine appropriate node type based on technology
-      const getNodeType = () => {
-        if (isDatabaseTech) return 'database';
-        if (isServerTech && !isDatabaseTech) return 'service';
-        if (isCloudTech) return 'device';
-        if (isFrontendTech) return 'service';
-        return 'cube'; // default
-      };
+      // const getNodeType = () => {
+      //   if (isDatabaseTech) return 'database';
+      //   if (isServerTech && !isDatabaseTech) return 'service';
+      //   if (isCloudTech) return 'device';
+      //   if (isFrontendTech) return 'service';
+      //   return 'cube'; // default
+      // };
 
       // Base data
       const environments = ['development', 'staging', 'production'] as const;

@@ -15,9 +15,9 @@ interface DOMSelectionLayerProps {
 
 export function DOMSelectionLayer({
   nodes,
-  connections,
+  // connections,
   selectedNodeIds,
-  canvasSize,
+  // canvasSize,
   zoomLevel,
   canvasOffset,
   isDragging = false,
