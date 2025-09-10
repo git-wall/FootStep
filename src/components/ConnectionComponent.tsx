@@ -379,7 +379,9 @@ export function ConnectionComponent({ connection, nodes, isSelected = false, onC
         const control2Y = toY - upwardOffset; // Then curve back UP to end (negative offset)
         return `M ${fromX} ${fromY} C ${control1X} ${control1Y} ${control2X} ${control2Y} ${toX} ${toY}`;
       }
-    } else if (pathStyle === 'custom' && connection.customStyle) {
+    }
+    
+    if (pathStyle === 'custom' && connection.customStyle) {
       // Custom path based on custom style
       if (connection.customStyle.style === 'curve') {
         // Simple curve like regular curve
