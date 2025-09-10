@@ -30,7 +30,6 @@ interface ImportJsonData {
   }>;
 }
 import './App.css';
-import SplashCursor from './components/animation/SplashCursor';
 
 function App() {
   const [nodes, setNodes] = useState<Node[]>([]);
@@ -701,9 +700,9 @@ function App() {
   }, []);
 
   // Handle node info popup
-  const handleShowNodeInfo = useCallback((node: Node) => {
-    setNodeInfoPopup(node);
-  }, []);
+  // const handleShowNodeInfo = useCallback((node: Node) => {
+  //   setNodeInfoPopup(node);
+  // }, []);
 
   const handleCloseNodeInfo = useCallback(() => {
     setNodeInfoPopup(null);
@@ -1273,43 +1272,43 @@ function App() {
   };
 
   // Generate sample data based on technology
-  const generateSampleDataForTech = (technologyId: string) => {
-    // Use correct IDs from constants.ts
-    const isServerTech = [
-      'nodejs', 'express', 'nginx', 'apache', 'docker', 'kubernetes',
-      'redis', 'mongodb', 'postgres', 'mysql', 'kafka', 'rabbitmq',
-      'keycloak', 'vault', 'kong', 'istio', 'consul', 'prometheus',
-      'grafana', 'elasticsearch', 'spark', 'airflow', 'service',
-      'microservice', 'gateway', 'proxy', 'loadbalancer'
-    ].includes(technologyId);
+  // const generateSampleDataForTech = (technologyId: string) => {
+  //   // Use correct IDs from constants.ts
+  //   const isServerTech = [
+  //     'nodejs', 'express', 'nginx', 'apache', 'docker', 'kubernetes',
+  //     'redis', 'mongodb', 'postgres', 'mysql', 'kafka', 'rabbitmq',
+  //     'keycloak', 'vault', 'kong', 'istio', 'consul', 'prometheus',
+  //     'grafana', 'elasticsearch', 'spark', 'airflow', 'service',
+  //     'microservice', 'gateway', 'proxy', 'loadbalancer'
+  //   ].includes(technologyId);
 
-    const isCloudTech = ['aws', 'azure', 'gcp', 'vercel', 'netlify'].includes(technologyId);
+  //   const isCloudTech = ['aws', 'azure', 'gcp', 'vercel', 'netlify'].includes(technologyId);
 
-    const isLightweightTech = [
-      'worker', 'scheduler', 'auth0', 'opa', 'solr', 'minio'
-    ].includes(technologyId);
+  //   const isLightweightTech = [
+  //     'worker', 'scheduler', 'auth0', 'opa', 'solr', 'minio'
+  //   ].includes(technologyId);
 
-    if (isServerTech || isCloudTech) {
-      return {
-        cpu: Math.floor(Math.random() * 80) + 10,
-        memory: Math.floor(Math.random() * 70) + 15,
-        ip: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`
-      };
-    } else if (isLightweightTech) {
-      return {
-        cpu: Math.floor(Math.random() * 30) + 5,
-        memory: Math.floor(Math.random() * 25) + 5,
-        ip: `10.0.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`
-      };
-    } else {
-      const hasIp = Math.random() > 0.6;
-      return {
-        cpu: Math.floor(Math.random() * 50) + 5,
-        memory: Math.floor(Math.random() * 40) + 10,
-        ip: hasIp ? `10.0.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}` : undefined
-      };
-    }
-  };
+  //   if (isServerTech || isCloudTech) {
+  //     return {
+  //       cpu: Math.floor(Math.random() * 80) + 10,
+  //       memory: Math.floor(Math.random() * 70) + 15,
+  //       ip: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`
+  //     };
+  //   } else if (isLightweightTech) {
+  //     return {
+  //       cpu: Math.floor(Math.random() * 30) + 5,
+  //       memory: Math.floor(Math.random() * 25) + 5,
+  //       ip: `10.0.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`
+  //     };
+  //   } else {
+  //     const hasIp = Math.random() > 0.6;
+  //     return {
+  //       cpu: Math.floor(Math.random() * 50) + 5,
+  //       memory: Math.floor(Math.random() * 40) + 10,
+  //       ip: hasIp ? `10.0.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}` : undefined
+  //     };
+  //   }
+  // };
 
   // Center node in view (Corrected transform calculation)
   const handleCenterNode = useCallback((nodeId: string) => {
@@ -1817,8 +1816,8 @@ function App() {
     });
 
     // FIXED: Calculate required canvas size considering ALL 4 directions
-    const requiredLeft = Math.max(0, -minX + padding); // Space needed on left
-    const requiredTop = Math.max(0, -minY + padding);  // Space needed on top
+    // const requiredLeft = Math.max(0, -minX + padding); // Space needed on left
+    // const requiredTop = Math.max(0, -minY + padding);  // Space needed on top
     const requiredWidth = maxX + padding;
     const requiredHeight = maxY + padding;
 

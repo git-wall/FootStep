@@ -16,7 +16,7 @@ interface SimpleSelectionLayerProps {
 
 export function SimpleSelectionLayer({
   nodes,
-  connections,
+  // connections,
   selectedNodeIds,
   canvasSize,
   zoomLevel,
